@@ -27,11 +27,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+//const BACKENDURL = process.env.REACT_APP_API_HOST;
+
 function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
+    axios.get('https://web-flask-app-backend-w3s53knvmq-uk.a.run.app/api/data')
+    //axios.get('${BACKENDURL}/api/data')
       .then(response => {
         setData(response.data.message);
       })
